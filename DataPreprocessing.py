@@ -28,28 +28,28 @@ def DataPProcess(data):
     return data
 
 
-df = pd.read_csv("UnProcesseddata.csv")
+# df = pd.read_csv("UnProcesseddata.csv")
 
 
-df['Examples'].replace('', np.nan, inplace=True)
-df = df.dropna()
-examples = df["Examples"].tolist()
-df = df[~df['Examples'].astype(str).str.startswith(',')]
-
-for i in range(0,len(examples)):
-    examples[i]= examples[i].replace(",",".")
-    # examples[i]= examples[i].replace(" ","",1)
-    examples[i] = DataPProcess(examples[i])
-
-
-examples = pd.DataFrame(examples)
-
-df['Examples'] = examples
+# df['Examples'].replace('', np.nan, inplace=True)
 # df = df.dropna()
+# examples = df["Examples"].tolist()
+# df = df[~df['Examples'].astype(str).str.startswith(',')]
 
-print(df)
+# for i in range(0,len(examples)):
+#     examples[i]= examples[i].replace(",",".")
+#     # examples[i]= examples[i].replace(" ","",1)
+#     examples[i] = DataPProcess(examples[i])
 
-df.to_csv("Processeddata.csv")
+
+# examples = pd.DataFrame(examples)
+
+# df['Examples'] = examples
+# # df = df.dropna()
+
+# print(df)
+
+# df.to_csv("Processeddata.csv")
 
 # DataPProcess("No Topic Maps talks at the Balisage Markup Conference 2009   Program online at http://tr.im/mL6Z (via @bobdc) #topicmaps")
 # transf = re.sub(r'https?://[^ ]+', '', tweet_1) # Remove the URLs
